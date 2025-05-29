@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 import numpy as np
+from flask_cors import CORS 
 import joblib
 
 app = Flask(__name__)
+CORS(app)
 
 # Load model and scaler
 best_model = joblib.load('best_xgb_parkinson_model.joblib')
